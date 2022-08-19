@@ -1,0 +1,39 @@
+* img{
+    height: 100px;
+    width: 100px;
+    margin: 24px 22px 10px 7px;
+
+}
+.h1 {
+    font-family: 'Roboto';
+}
+.PaginaToda{
+    background-color: #EEF9BF;
+    width: 100%;
+    height: 629px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.CaixaCartas {
+    width: 100% - 218px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 109px;
+    margin-right: 109px;
+    margin-top: 150px;
+    
+    
+
+}
+.Cartas {
+    margin-left: 17px;
+    height: 146px;
+    width: 117px;
+    margin-bottom: 17px;
+    border-radius: 5px;
+    background-color:#99CEA8 ;
+
+
+}
