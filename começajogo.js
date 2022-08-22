@@ -1,11 +1,16 @@
+let numcartas;
+let cartasjogo = [];
+let cont = 1;
+let divcartas;
+let nome = prompt("Bem vindo ao Parrots Memory CardGame!\nQual o seu nome, jogador?");    
+
 function começajogo(){
-    let numcartas = 1;
-    let verificapar = numcartas%2;
-    let cartasjogo = [];
-    let cont = 1;
+    numcartas = 0;
+    cartasjogo = []
     
+    let verificapar = numcartas%2;    
     while(numcartas<4 || numcartas> 14 ||verificapar !== 0){
-        numcartas = prompt("Com quantas cartas deseja jogar?")
+        numcartas = prompt(`Com quantas cartas deseja jogar, ${nome}?`)
         verificapar = numcartas%2;
         if (numcartas<4 || numcartas> 14 || verificapar !== 0){
             alert("favor inserir um número par entre 4 e 14")
@@ -23,7 +28,7 @@ function começajogo(){
         return Math.random() - 0.5; 
     }
     console.log(cartasjogo);
-    let divcartas = document.querySelector(".CaixaCartas");
+    divcartas = document.querySelector(".CaixaCartas");
 
         for(i=0; i<cartasjogo.length; i++){
         let txt = cartasjogo[i]
@@ -40,7 +45,9 @@ function começajogo(){
 }
 let primeiracarta = '';
 let segundacarta = '';
+let cont2 =0;
 function virarcarta(cartaclicada){
+    
     
     if(primeiracarta !== '' && segundacarta !==''){
         console.log(primeiracarta);
@@ -60,11 +67,12 @@ function virarcarta(cartaclicada){
 
    
 }
- function verificaigual(c1, c2){  
-      
+ function verificaigual(c1, c2){ 
+    cont2++;
     if(c1.parentNode.classList[0]===c2.parentNode.classList[0]){
     primeiracarta= '';
-    segundacarta= '';     
+    segundacarta= '';    
+    verificafimjogo(); 
 }
     else {
     
@@ -79,4 +87,16 @@ function desvira(a, b){
     desvira2.classList.remove('virada');
     primeiracarta= '';
     segundacarta= '';
+}
+function verificafimjogo(){
+    let fim = document.querySelectorAll('.virada');
+    console.log(fim.length);
+    console.log(numcartas);
+    if(fim.length == numcartas){
+      let jogarnovamente = prompt(`Parabéns, ${nome}, você venceu o jogo em ${cont2} jogadas e segundos!\nDeseja jogar novamente?`);
+      if(jogarnovamente === 'sim'){
+        divcartas.innerHTML='';
+        começajogo();
+          }
+    }
 }

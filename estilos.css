@@ -40,7 +40,7 @@
 
 }
 .virada{
-    transform: rotateY(180deg);
+    transform: rotatey(180deg);
 }
 
        
@@ -61,13 +61,11 @@
     
 }
 .front-face{
-    background-color: #99CEA8;
-    
-    
-    
-    
-     
+    background-color: #99CEA8;   
+    transform: rotatey(360deg);
+    transition: all 500ms linear; 
 }
+
 .back-face{
     background-color: #99CEA8 ;
     
