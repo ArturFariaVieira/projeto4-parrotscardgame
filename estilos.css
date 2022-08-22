@@ -22,8 +22,7 @@
     flex-wrap: wrap;
     margin-left: 109px;
     margin-right: 109px;
-    margin-top: 150px;
-    
+    margin-top: 150px;  
     
 
 }
@@ -33,7 +32,49 @@
     width: 117px;
     margin-bottom: 17px;
     border-radius: 5px;
-    background-color:#99CEA8 ;
+    background-color:#99CEA8;
+    position: relative;
+    
+    
 
 
+}
+.virada{
+    transform: rotateY(180deg);
+}
+
+       
+
+ 
+
+.face {
+    height: 146px;
+    width: 117px;
+    position: absolute;   
+    border-radius: 5px;
+    border: solid 1px grey;
+    backface-visibility: hidden;
+    transition: all 500ms linear;
+    transform-style: preserve-3d;
+    
+    
+    
+}
+.front-face{
+    background-color: #99CEA8;
+    
+    
+    
+    
+     
+}
+.back-face{
+    background-color: #99CEA8 ;
+    
+    
+    
+    
+
+    
+    
 }
