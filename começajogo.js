@@ -7,8 +7,11 @@ let segundacarta = '';
 let cont2 =0;
 let tempo =0;
 let pararelogio;
+let jogadas = document.querySelector('.jogadas');
 let nome = prompt("Bem vindo ao Parrots Memory CardGame!\nQual o seu nome, jogador?");    
-function começajogo(){       
+function começajogo(){
+    let caixajogador = document.querySelector('.caixajogador');
+    caixajogador.innerHTML = `${nome}`;       
     pararelogio = setInterval(relogio, 1000);           
     while(numcartas<4 || numcartas> 14 ||verificapar !== 0){
         numcartas = prompt(`Com quantas cartas deseja jogar, ${nome}?`)
@@ -63,6 +66,8 @@ function virarcarta(cartaclicada){
 }
  function verificaigual(c1, c2){ 
     cont2++;
+    
+    jogadas.innerHTML = `Jogadas: ${cont2}`;
     if(c1.parentNode.classList[0]===c2.parentNode.classList[0]){
     primeiracarta= '';
     segundacarta= '';    
@@ -88,13 +93,14 @@ function verificafimjogo(){
     console.log(numcartas);
     if(fim.length == numcartas){
         clearInterval(pararelogio); 
-      let jogarnovamente = prompt(`Parabéns, ${nome}, você venceu o jogo em ${cont2} jogadas e ${tempo}segundos!\nDeseja jogar novamente?`);
+      let jogarnovamente = prompt(`Parabéns, ${nome}, você venceu o jogo em ${cont2} jogadas e ${tempo} segundos!\nDeseja jogar novamente?`);
       if(jogarnovamente === 'sim'){
         divcartas.innerHTML='';
         cont2=0;
         numcartas = 0;
         tempo=0;
-        cartasjogo = []
+        cartasjogo = [];
+        jogadas.innerHTML = `Jogadas: ${cont2}`;
         começajogo();
           }
     }
@@ -102,5 +108,5 @@ function verificafimjogo(){
 function relogio(){
     tempo++;
     let time = document.querySelector('.relogio');
-    time.innerHTML = tempo;
+    time.innerHTML = `Tempo   : ${tempo}`;
 }

@@ -4,27 +4,31 @@
     margin: 24px 22px 10px 7px;
 
 }
-.h1 {
-    font-family: 'Roboto';
+
+*{
+    box-sizing:border-box;
+    
 }
 .PaginaToda{
     background-color: #EEF9BF;
-    width: 100%;
-    height: 629px;
+    width: auto;
+    height: auto;
+    min-height: 629px;
     align-items: center;
     justify-content: center;
-
-
+    padding: 40px;
+    position: relative;
 }
 .CaixaCartas {
-    width: 100% - 218px;
+    width: 100% -140px;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 109px;
-    margin-right: 109px;
-    margin-top: 150px;  
+    margin-left: 69px;
+    margin-right: 69px;
+    margin-top: 80px; 
+    height:auto;
+    background-color: #EEF9BF;
     
-
 }
 .Cartas {
     margin-left: 17px;
@@ -33,20 +37,11 @@
     margin-bottom: 17px;
     border-radius: 5px;
     background-color:#99CEA8;
-    position: relative;
-    
-    
-
-
+    position: relative; 
 }
 .virada{
     transform: rotatey(180deg);
-}
-
-       
-
- 
-
+}  
 .face {
     height: 146px;
     width: 117px;
@@ -56,9 +51,8 @@
     backface-visibility: hidden;
     transition: all 500ms linear;
     transform-style: preserve-3d;
-    
-    
-    
+
+   
 }
 .front-face{
     background-color: #99CEA8;   
@@ -67,12 +61,128 @@
 }
 
 .back-face{
-    background-color: #99CEA8 ;
-    
-    
-    
-    
+    background-color: #99CEA8 ;    
+}
+.relogio{
+    position: absolute;
+    top: 150px;
+    right: 35px;
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
 
+}
+.caixajogador{
+    position: absolute;
+    top: 100px;
+    right: 35px;
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
     
+}
+.jogadas{
+    position: absolute;
+    top: 125px;
+    right: 35px;
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
+
+}
+.titulo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;    
+    margin-bottom: 47px;
+    justify-content: center;
+    height:63px;
+    margin: 0px 47px auto;
+    text-align: center;
+    top:40px
+}
+@media (max-width: 587px){
+    .titulo{
+        font-size: 36px;
+        top:40px;
+    }
+    .relogio{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        font-size: 10px;
+        font-family: 'Press Start 2P', cursive;
     
+    }
+    .caixajogador{
+        position: absolute;
+        top: 100px;
+        right: 10px;
+        font-size: 10px;
+        font-family: 'Press Start 2P', cursive;
+        
+    }
+    .jogadas{
+        position: absolute;
+        top: 125px;
+        right: 10px;
+        font-size: 10px;
+        font-family: 'Press Start 2P', cursive;
+    
+    }
+}
+
+@media (max-width: 335px){
+.titulo{
+    font-size: 36px;
+    position: absolute;
+    top:40px;
+    left:12px;
+    font-weight:700;
+    font-size: 36px;
+    line-height: 42.19px;
+    text-align: center;
+   
+    
+}
+.PaginaToda{
+    background-color: #EEF9BF;
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+    display: flex;
+}
+.CaixaCartas {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;   
+    margin-top: 150px; 
+    justify-content: center;
+    
+}
+.Cartas {
+    margin-top:17px;
+    height: 146px;
+    width: 117px;
+    margin-bottom: 17px;
+    border-radius: 5px;
+    background-color:#99CEA8;
+    position: relative; 
+}
+.relogio {
+    position: absolute;
+    top: 180px;
+    
+}
+.jogadas{
+    position: absolute;
+    top:160px;
+}
+.caixajogador{
+    position: absolute;
+    top: 140px;
+}
+
 }
