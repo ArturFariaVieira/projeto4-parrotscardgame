@@ -12,8 +12,8 @@
 .PaginaToda{
     background-color: #EEF9BF;
     width: auto;
-    height: auto;
-    min-height: 629px;
+    height: 100vh;
+    min-height: 624px;
     align-items: center;
     justify-content: center;
     padding: 40px;

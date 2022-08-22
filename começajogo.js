@@ -7,6 +7,7 @@ let segundacarta = '';
 let cont2 =0;
 let tempo =0;
 let pararelogio;
+let podevirarcartas = true;
 let jogadas = document.querySelector('.jogadas');
 let nome = prompt("Bem vindo ao Parrots Memory CardGame!\nQual o seu nome, jogador?");    
 function começajogo(){
@@ -48,29 +49,27 @@ function começajogo(){
     }
 }
 
-function virarcarta(cartaclicada){     
-        if(primeiracarta !== '' && segundacarta !==''){        
-        verificaigual(primeiracarta, segundacarta);
-    }
-    
-    if(primeiracarta=== ''){
+function virarcarta(cartaclicada){ 
+    if(podevirarcartas=== true){   
+        if(primeiracarta=== ''){
         primeiracarta = cartaclicada;
         primeiracarta.classList.add('virada');
-    }
-    else {segundacarta = cartaclicada;
+        }
+        else {segundacarta = cartaclicada;
         segundacarta.classList.add('virada');
+        podevirarcartas = false;
         verificaigual(primeiracarta, segundacarta);
+        }   
     }
-
-   
 }
  function verificaigual(c1, c2){ 
     cont2++;
     
     jogadas.innerHTML = `Jogadas: ${cont2}`;
-    if(c1.parentNode.classList[0]===c2.parentNode.classList[0]){
+    if(c1.parentNode.classList[0]===c2.parentNode.classList[0]){    
     primeiracarta= '';
     segundacarta= '';    
+    podevirarcartas = true;
     verificafimjogo(); 
 }
     else {
@@ -86,6 +85,7 @@ function desvira(a, b){
     desvira2.classList.remove('virada');
     primeiracarta= '';
     segundacarta= '';
+    podevirarcartas=true;
 }
 function verificafimjogo(){
     let fim = document.querySelectorAll('.virada');
